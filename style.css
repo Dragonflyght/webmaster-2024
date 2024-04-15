@@ -3,7 +3,8 @@
     --ltgray: #ecf2ef;
     --mdgray: #e6ede9;
     --dkgray: #303432;
-    --dkgreen: #206745;
+    --mdgreen: #206745;
+    --dkgreen: #0e472c;
     --ltlime: #dff4ba;
     --mdlime: #76ba00;
     --dklime: #2d4601;
@@ -28,7 +29,31 @@ h2 {
     font-style: italic;
 }
 
+@keyframes button-link-hover-on {
+    from {
+        background-color: var(--berry);
+        color: white;
+    }
+    to {
+        background-color: rgba(0,0,0,0);
+        color: var(--berry);
+    }
+}
+
+@keyframes button-link-hover-off {
+    from {
+        background-color: rgba(0,0,0,0);
+        color: var(--berry);
+    }
+    to {
+        background-color: var(--berry);
+        color: white;
+    }
+}
+
 .button-link {
+    animation-name: button-link-hover-off;
+    animation-duration: 0.5s;
     background-color: var(--berry);
     padding: 7px 20px 10px 20px;
     color: white;
@@ -39,6 +64,8 @@ h2 {
 }
 
 .button-link:hover, .button-link:active, .button-link:focus {
+    animation-name: button-link-hover-on;
+    animation-duration: 0.5s;
     background-color: rgba(0,0,0,0);
     color: var(--berry);
     cursor: pointer;
@@ -58,12 +85,31 @@ h2 {
 }
 
 .navbar {
-    background-image: linear-gradient(var(--ltgray), rgba(1,1,1,0));
+    background-image: linear-gradient(rgba(236, 242, 239, 0.7) 0%, rgba(236, 242, 239, 0.5) 30%, rgba(236, 242, 239, 0));
+    padding-bottom: 50px;
+    /* background-color: rgba(236, 242, 239, .7); */
     font-family: Inter, sans-serif;
+
+}
+
+.nav-item a {
+    color: black;
+    font-weight: 600;
+    border-bottom: 2px solid rgba(0,0,0,0);
+}
+
+.navbar-nav .nav-link.active {
+    color: black;
+    border-color: black;
+    cursor: default;
+}
+
+.nav-item a:hover, .nav-item a:focus, .nav-item a:active {
+    color: var(--mdgreen);
 }
 
 .navbar-brand {
-    color: var(--dklime);
+    color: black;
 }
 
 header {
