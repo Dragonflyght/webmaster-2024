@@ -3,16 +3,20 @@
     --ltgray: #ecf2ef;
     --mdgray: #e6ede9;
     --dkgray: #303432;
+    --ltgreen: #578f74;
     --mdgreen: #206745;
     --dkgreen: #0e472c;
+    --ltsage: #c3e0d2;
+    --sage: #94b5a5;
     --ltlime: #dff4ba;
     --mdlime: #76ba00;
     --dklime: #2d4601;
+    --ltberry: #9c5772;
     --berry: #7a0c38;
 }
 
 body {
-    background-color: var(--offwhite);
+    background-color: var(--mdgray);
     font-family: Inter, sans-serif;
     padding: 0px;
     margin: 0px;
@@ -20,55 +24,83 @@ body {
 
 h1 {
     font-family: Indivisible, sans-serif;
-    font-weight: 700;
+    font-weight: 600;
+    text-align: center;
+    color: var(--dkgreen);
 }
+
 
 h2 {
     font-family: Indivisible, sans-serif;
     font-weight: 500;
-    font-style: italic;
+    color: var(--dkgreen);
+    font-size: 1.5rem;
+    text-align: center;
 }
 
-@keyframes button-link-hover-on {
-    from {
-        background-color: var(--berry);
-        color: white;
-    }
-    to {
-        background-color: rgba(0,0,0,0);
-        color: var(--berry);
-    }
+p {
+    font-size: 1.1rem;
+    font-weight: 500;
 }
 
-@keyframes button-link-hover-off {
-    from {
-        background-color: rgba(0,0,0,0);
-        color: var(--berry);
-    }
-    to {
-        background-color: var(--berry);
-        color: white;
-    }
+.spacer {
+    height: 100px;
+}
+
+.main-content-section {
+    width: 90%;
+    max-width: 750px;
+    margin: auto;
+    text-align: center;
+}
+
+.source-link {
+    color: var(--dkgreen);
+    font-size: 0.9rem;
+    margin-left: -2px;
+    margin-right: 2px;
+}
+
+.source-link:hover {
+    color: var(--mdlime);
 }
 
 .button-link {
-    animation-name: button-link-hover-off;
-    animation-duration: 0.5s;
     background-color: var(--berry);
-    padding: 7px 20px 10px 20px;
+    padding: 10px 20px;
     color: white;
-    font-weight: 600;
+    font-weight: 700;
     text-decoration: none;
     border-radius: 5px;
     border: 3px solid var(--berry);
+    transition: all 0.2s ease-in-out;
+    text-transform: uppercase;
+    letter-spacing: 0.07rem;
+    box-shadow: 0px 0px 15px rgba(0,0,0,0.2);
 }
 
 .button-link:hover, .button-link:active, .button-link:focus {
-    animation-name: button-link-hover-on;
-    animation-duration: 0.5s;
-    background-color: rgba(0,0,0,0);
+    background-color: rgba(256,256,256,0);
     color: var(--berry);
     cursor: pointer;
+}
+
+.button-link-green {
+    background-color: var(--dkgreen);
+    border-color: var(--dkgreen);
+}
+
+.button-link-green:hover, .button-link-green:active, .button-link-green:focus {
+    color: var(--dkgreen);
+}
+
+.button-link-lime {
+    background-color: var(--mdlime);
+    border-color: var(--mdlime);
+}
+
+.button-link-lime:hover, .button-link-lime:active, .button-link-lime:focus {
+    color: var(--mdlime);
 }
 
 .navbar .navbar-toggler-icon {
@@ -95,13 +127,12 @@ h2 {
 .nav-item a {
     color: black;
     font-weight: 600;
-    border-bottom: 2px solid rgba(0,0,0,0);
 }
 
 .navbar-nav .nav-link.active {
     color: black;
-    border-color: black;
     cursor: default;
+    font-weight: 800;
 }
 
 .nav-item a:hover, .nav-item a:focus, .nav-item a:active {
@@ -119,30 +150,198 @@ header {
     justify-content: center;
     align-items: center;
     text-align: center;
+    width: 100%;
+    height: 50vh;
+    padding: 100px 10px;
+    box-shadow: inset 0px 0px 15px rgba(0,0,0,0.2);
 }
 
+
 header h1 {
-    font-family: Inter, sans-serif;
-    font-weight: 700;
+    font-family: Indivisible, sans-serif;
+    font-weight: 600;
     color: var(--berry);
-    margin-bottom: 20px;
+    margin-bottom: 30px;
 }
 
 header a {
-    font-size: 1.2rem;
+    font-size: 1.1rem;
 }
 
 header.hero {
-    width: 100%;
-    height: 100vh;
+    height: 98vh;
+}
+
+header.header-content-block {
+    min-height: 100vh;
 }
 
 header .header-content {
     margin: auto;
-    max-width: 30%;
+    width: 100%;
+    max-width: 1000px;
+    padding: 50px 40px 70px 40px;
+}
+
+header.hero .header-content {
+    max-width: 500px;
+    z-index: 1;
+}
+
+header .header-content.header-content-white {
+    background-color: var(--mdgray);
+    border-radius: 15px;
+    box-shadow: 0px 0px 15px rgba(0,0,0,0.2);
 }
 
 #home-header {
     background-image: url("assets/powerlines-extended.png");
     background-position: 50% 50%;
 }
+
+#home-energy-use-header {
+    background-image: url("assets/kitchen.png");
+    background-position: 50% 50%;
+}
+
+.svg-overlay {
+    width: 100%;
+    height: 500px;
+    min-width: 800px;
+    float: right;
+    margin-top: -498px;
+    background-size: contain;
+    background-position: bottom 0px right 0px;
+    background-repeat: no-repeat;
+    color: white;
+    filter: drop-shadow(0px -5px 3px rgba(0,0,0,0.1));
+}
+
+.svg-overlay.svg-overlay-windturbine {
+    background-image: url("assets/windmills.svg")
+}
+
+.svg-overlay.svg-overlay-windturbine-green {
+    background-image: url("assets/windmills-green.svg")
+}
+
+.stat-block h1 {
+    margin: 0px;
+    font-size: 5rem;
+}
+
+.stat-block p {
+    margin: 0px;
+    color: var(--berry);
+    font-weight: 600;
+}
+
+.stat-block {
+    margin: 20px 0px;
+}
+
+.green-fill {
+    padding: 0px;
+    margin: 0px;
+    background-color: var(--ltsage);
+}
+
+.sidebar {
+    height: 100vh;
+    position: fixed;
+    width: 250px;
+    padding-left: 25px;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    
+}
+
+.sidebar ul {
+    padding: 20px;
+}
+
+.sidebar li {
+    list-style: none;
+    margin: 20px 0px 20px -15px;
+}
+
+.sidebar li a {
+    text-decoration: none;
+    color: var(--black);
+    font-size: 1.1rem;
+    font-weight: 600;
+}
+
+.sidebar li a.active-page-location {
+    color: var(--berry);
+    font-weight: 800;
+    
+}
+
+.sidebar i {
+    width: 25px;
+    text-align: center;
+    padding: 3px 0px;
+}
+
+.sidebar span {
+    margin-left: 5px;
+}
+
+.sidebar-left {
+    margin-left: 250px;
+    padding: 25px;
+}
+
+.learn-section {
+    background-color: white;
+    padding: 60px 30px;
+    border-radius: 20px;
+    max-width: 800px;
+    margin: 0px auto 50px auto;
+}
+
+.learn-section h1 {
+    text-align: left;
+    margin-bottom: 20px;
+}
+
+@media screen and (max-width: 992px) {
+    .sidebar {
+        width: 40px;
+        padding-left: 10px;
+    }
+    .sidebar-left {
+        margin-left: 40px;
+        padding: 20px;
+    }
+    .learn-section {
+        background-color: white;
+        padding: 30px 20px;
+        border-radius: 10px;
+        margin: 0px auto 30px auto;
+    }
+}
+
+#learn-background-image, #learn-background-overlay, #learn-sidebar-overlay {
+    position: fixed;
+    width: 100%;
+    height: 100%;
+    z-index: -1;
+}
+
+#learn-background-image {
+    background-image: url("assets/learn-bg-images/about.jpg");
+    background-size: cover;
+    transition: all 1s ease-in-out;
+}
+
+#learn-background-overlay {
+    background-image: linear-gradient(rgba(230, 237, 233, 1), rgba(230, 237, 233, 0))
+}
+
+#learn-sidebar-overlay {
+    background-image: linear-gradient(90deg, rgba(230, 237, 233, 1), rgba(230,237,233,0) 30%)
+}
+
