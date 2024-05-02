@@ -1,7 +1,6 @@
-document.getElementById("body").onscroll = function parallax() {
+document.getElementById("body").onscroll = function scroll() {
   elements = {
-    "home-header": [50, -30],
-    "home-energy-use-header": [50, -30]
+    "initiatives-header": [50, -40],
   }
   var scrolltotop = document.scrollingElement.scrollTop;
   for (element in elements) {
@@ -14,5 +13,8 @@ document.getElementById("body").onscroll = function parallax() {
     console.log(yvalue);
     target.style.backgroundPosition = xvalue + "% " + yvalue + "%";
   }
+
+
+  
 }
 

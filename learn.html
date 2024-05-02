@@ -17,10 +17,11 @@
         <script src="https://kit.fontawesome.com/ec9cbf9ed1.js" crossorigin="anonymous"></script>
     </head>
     <body id="body">
+        <div id="navbar-page-overlay"></div>
         <nav class="navbar fixed-top navbar-expand-sm">
             <div class="container-fluid">
                 <a class="navbar-brand" href="#">Live<strong>Green</strong></a>
-                <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+                <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation" onclick="navbarToggle()">
                     <span class="navbar-toggler-icon"></span>
                 </button>
                 <div class="collapse navbar-collapse text-right" id="navbarSupportedContent">
@@ -55,7 +56,8 @@
                 <li><a href="#section-env" id="link-section-env"><i class="fa fa-solid fa-tree"></i><span class="d-none d-lg-inline">Environment</span></a></li>
             </ul>
         </div>
-        <div id="learn-background-image" style="background-image: url('assets/learn-bg-images/about.jpg')"></div>
+        <div id="learn-background-image-1"></div>
+        <div id="learn-background-image-2" class="learn-background-image-inactive"></div>
         <div id="learn-background-overlay"></div>
         <div id="learn-sidebar-overlay"></div>
         <main class="sidebar-left">
@@ -80,7 +82,7 @@
                 <p>Geothermal energy comes from underground pockets of water that have been heated by the Earth’s internal energy. Wells bring up steam and hot water that we can use for electricity. Geothermal reservoirs are also used as heating and cooling systems for buildings, campuses, and communities, and can directly provide hot water for a variety of uses. A private geothermal system can cost anywhere from $8,000 to $24,000. <a href="https://www.forbes.com/home-improvement/hvac/geothermal-heating-cooling-systems-cost/" target="_blank" class="source-link"><sup><i class="fa fa-solid fa-link"></i></sup></a></p>
             </div>
             <div id="section-hydro" class="learn-section">
-                <h1>Hydroenergy</h1>
+                <h1>Hydropower</h1>
                 <p>Hydropower uses moving water to generate electricity. Facilities can range in size from huge dams built over wide rivers to small generators taking advantage of irrigation ditches. Some hydropower systems generate electricity without the use of a dam, instead channeling a portion of a stream through a powerhouse before allowing it to rejoin the main river. Hydropower relies on relatively stable rainfall and will be affected if water levels change - so it is more practical in some locations than in others. A personal hydroelectric system, known as microhydropower, typically costs between $15,000 - $55,000. <a href="https://www.sunecohydro.com/how-much-does-a-5kw-hydro-turbine-cost/" target="_blank" class="source-link"><sup><i class="fa fa-solid fa-link"></i></sup></a></p>
             </div>
             <div id="section-marine" class="learn-section">
@@ -103,9 +105,13 @@
             </div>
             
         </main>
+        <footer>
+            <p class="footer-brand">Live<strong>Green</strong></p>
+            <p>&copy;2024 National TSA Webmaster Team XXXXX</p>
+        </footer>
     </body>
 
     <!-- JavaScript -->
-    <!-- <script src="parallax.js"></script> -->
-    <script src="scrollProgress.js"></script> 
+    <script src="learn.js"></script>
+    <script src="navbar.js"></script>
 </html>

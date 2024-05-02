@@ -10,7 +10,7 @@
     --sage: #94b5a5;
     --ltlime: #dff4ba;
     --mdlime: #76ba00;
-    --dklime: #2d4601;
+    --dklime: #4f7d00;
     --ltberry: #9c5772;
     --berry: #7a0c38;
 }
@@ -40,11 +40,22 @@ h2 {
 
 p {
     font-size: 1.1rem;
-    font-weight: 500;
+    font-weight: 400;
 }
 
 .spacer {
     height: 100px;
+}
+
+.spacer.spacer-hr {
+    height: 30px;
+    border-bottom: 1px solid var(--dkgreen);
+    margin: 0px auto 70px auto;
+    width: 60%;
+}
+
+.spacer.spacer-small {
+    height: 25px;
 }
 
 .main-content-section {
@@ -70,6 +81,7 @@ p {
     padding: 10px 20px;
     color: white;
     font-weight: 700;
+    font-size: 1rem;
     text-decoration: none;
     border-radius: 5px;
     border: 3px solid var(--berry);
@@ -121,27 +133,58 @@ p {
     padding-bottom: 50px;
     /* background-color: rgba(236, 242, 239, .7); */
     font-family: Inter, sans-serif;
-
+    z-index: 3;
 }
 
 .nav-item a {
-    color: black;
-    font-weight: 600;
+    color: var(--dkgreen);
+    font-weight: 500;
 }
 
 .navbar-nav .nav-link.active {
-    color: black;
+    color: var(--dkgreen);
     cursor: default;
     font-weight: 800;
 }
 
 .nav-item a:hover, .nav-item a:focus, .nav-item a:active {
-    color: var(--mdgreen);
+    color: var(--ltgreen);
 }
 
-.navbar-brand {
-    color: black;
+.navbar-brand, .footer-brand {
+    color: var(--dkgreen);
+    font-size: 1.2rem;
 }
+
+.navbar-brand:hover, .navbar-brand:focus, .navbar-brand:active {
+    color: var(--ltgreen);
+}
+
+
+#navbar-page-overlay {
+    width: 100%;
+    height: 100%;
+    position: absolute;
+    top: 0px;
+    left: 0px;
+    background-color: rgba(236, 242, 239, .7);
+    z-index: 2;
+    visibility: hidden;
+    opacity: 0;
+    transition: all 0.5s ease-in-out;
+    
+}
+
+@media screen and (max-width: 992px) {
+    
+    #navbar-page-overlay.navbar-page-overlay-show {
+        visibility: visible;
+        opacity: 1;
+    }
+
+}
+
+
 
 header {
     background-attachment: scroll;
@@ -151,7 +194,7 @@ header {
     align-items: center;
     text-align: center;
     width: 100%;
-    height: 50vh;
+    height: 75vh;
     padding: 100px 10px;
     box-shadow: inset 0px 0px 15px rgba(0,0,0,0.2);
 }
@@ -164,8 +207,9 @@ header h1 {
     margin-bottom: 30px;
 }
 
-header a {
-    font-size: 1.1rem;
+
+header p {
+    margin-bottom: 40px;
 }
 
 header.hero {
@@ -174,14 +218,17 @@ header.hero {
 
 header.header-content-block {
     min-height: 100vh;
+    
 }
 
+
 header .header-content {
-    margin: auto;
-    width: 100%;
+    margin: 0px auto;
+    width: 80%;
     max-width: 1000px;
     padding: 50px 40px 70px 40px;
 }
+
 
 header.hero .header-content {
     max-width: 500px;
@@ -192,6 +239,14 @@ header .header-content.header-content-white {
     background-color: var(--mdgray);
     border-radius: 15px;
     box-shadow: 0px 0px 15px rgba(0,0,0,0.2);
+    padding: 80px;
+}
+
+
+@media screen and (max-width: 992px) {
+    header .header-content.header-content-white {
+        padding: 30px;
+    }
 }
 
 #home-header {
@@ -199,10 +254,31 @@ header .header-content.header-content-white {
     background-position: 50% 50%;
 }
 
+#initiatives-header {
+    background-image: url("assets/initiatives-adj.png");
+    background-position: 50% 50%;
+}
+
+#initiatives-header h1 {
+    color: white;
+    text-shadow: 0px 0px 25px rgba(0,0,0,0.9);
+}
+
+#references-header {
+    background-image: url("assets/powerlines-extended.png");
+    background-position: 50% 50%;
+}
+
+#home-header-environment {
+    background-image: url("assets/power-plant.jpg");
+    background-position: 50% 50%;
+}
+
 #home-energy-use-header {
     background-image: url("assets/kitchen.png");
     background-position: 50% 50%;
 }
+
 
 .svg-overlay {
     width: 100%;
@@ -227,17 +303,18 @@ header .header-content.header-content-white {
 
 .stat-block h1 {
     margin: 0px;
-    font-size: 5rem;
+    font-size: 3.5rem;
 }
+
 
 .stat-block p {
     margin: 0px;
-    color: var(--berry);
-    font-weight: 600;
+    font-weight: 400;
+    font-size: 1.3rem;
 }
 
 .stat-block {
-    margin: 20px 0px;
+    margin: 20px 0px 40px 0px;
 }
 
 .green-fill {
@@ -270,12 +347,11 @@ header .header-content.header-content-white {
     text-decoration: none;
     color: var(--black);
     font-size: 1.1rem;
-    font-weight: 600;
+    font-weight: 500;
 }
 
 .sidebar li a.active-page-location {
     color: var(--berry);
-    font-weight: 800;
     
 }
 
@@ -295,13 +371,20 @@ header .header-content.header-content-white {
 }
 
 .learn-section {
-    background-color: white;
+    background-color: var(--mdgray);
     padding: 60px 30px;
     border-radius: 20px;
+    width: 90%;
     max-width: 800px;
-    margin: 0px auto 50px auto;
+    margin: 0px auto 100px auto;
+    box-shadow: 0px 0px 15px rgba(0,0,0,0.2);
+    transition: all 0.35s ease-in-out;
 }
 
+/* .learn-section.learn-section-focus {
+    transform: scale(1.02);
+}
+*/
 .learn-section h1 {
     text-align: left;
     margin-bottom: 20px;
@@ -324,24 +407,195 @@ header .header-content.header-content-white {
     }
 }
 
-#learn-background-image, #learn-background-overlay, #learn-sidebar-overlay {
+#learn-background-image-1, #learn-background-image-2, #learn-background-overlay, #learn-sidebar-overlay {
     position: fixed;
     width: 100%;
     height: 100%;
     z-index: -1;
 }
 
-#learn-background-image {
+#learn-background-image-1, #learn-background-image-2 {
     background-image: url("assets/learn-bg-images/about.jpg");
     background-size: cover;
-    transition: all 1s ease-in-out;
+    opacity: 100%;
+    transition: opacity 0.5s ease-in-out;
+}
+
+#learn-background-image-2.learn-background-image-inactive, #learn-background-image-1.learn-background-image-inactive {
+    opacity: 0%;
 }
 
 #learn-background-overlay {
-    background-image: linear-gradient(rgba(230, 237, 233, 1), rgba(230, 237, 233, 0))
+    background-color: rgba(87, 143, 116, 0.2);
 }
 
 #learn-sidebar-overlay {
     background-image: linear-gradient(90deg, rgba(230, 237, 233, 1), rgba(230,237,233,0) 30%)
 }
 
+.reveal-container {
+    display: flex;
+    flex-direction: row;
+}
+
+.reveal {
+    background-color: white;
+    position: relative;
+    bottom: 0px;
+    border-radius: 15px;
+    padding: 50px;
+    text-align: center;
+    margin: 20px;
+    opacity: 100%;
+    transition: all 0.5s ease-in;
+    box-shadow: 0px 0px 15px rgba(0,0,0,0.1);
+    flex: 1;
+}
+
+.reveal h1 {
+    color: var(--mdlime);
+}
+.reveal p {
+    color: var(--dklime);
+}
+
+.reveal-hidden {
+    opacity: 0%;
+    bottom: -50px;
+    transition: none;
+}
+
+.reveal-1 {
+    transition-delay: 0s;
+}
+.reveal-2 {
+    transition-delay: 0.25s;
+}
+.reveal-3 {
+    transition-delay: 0.5s;
+}
+
+
+@media screen and (max-width: 992px) {
+    .reveal-container {
+        flex-direction: column;
+    }
+
+    .reveal {
+        padding: 20px 20px 50px 20px;
+    }
+    
+}
+
+table {
+    /* border: 1px solid var(--sage); */
+    border-collapse: collapse;
+    margin: 50px;
+}
+
+table tr {
+    background-color: rgba(255,255,255,0.5);
+    padding: .35em;
+    
+}
+
+tr:nth-child(even) {
+    background-color: white;
+}
+
+table th,
+table td {
+    padding: 20px;
+}
+
+table th {
+    font-weight: 400;
+}
+
+table thead th {
+    color: var(--dkgreen);
+    font-weight: 800;
+}
+
+table thead {
+    background-color: white;
+    
+}
+
+
+table a {
+    color: var(--berry);
+    font-weight: 600;
+    text-decoration: none;
+}
+
+table a:hover, table a:active, table a:focus {
+    color: var(--ltberry);
+}
+
+@media screen and (max-width: 1024px) {
+
+    table {
+        margin: 15px;
+        
+    }
+
+    table th {
+        color: var(--dkgreen);
+        font-weight: 600;
+        font-size: 1.3rem;
+        margin: auto;
+        text-align: center;
+        width: 100%;
+        display: inline-block;
+    }
+
+    table thead {
+        display: none;
+    }
+    
+    table tr {
+        background-color: white;
+        display: block;
+        margin: 50px 0px;
+        border-radius: 15px;
+        box-shadow: 0px 0px 15px rgba(0,0,0,0.1);
+    }
+    
+    table td {
+        border-bottom: 1px solid var(--mdgray);
+        display: block;
+        text-align: right;
+        padding-left: 120px;
+    }
+    
+    table td::before {
+        content: attr(data-label);
+        float: left;
+        color: var(--dkgreen);
+        font-weight: 700;
+        position: relative;
+        right: 100px;
+    }
+    
+    table td:last-child {
+        border-bottom: 0;
+    }
+}
+
+footer {
+    background-color: var(--dkgreen);
+    color: var(--sage);
+    padding: 15px;
+    text-align: center;
+    
+}
+
+footer .footer-brand {
+    color: var(--sage);
+}
+
+footer p {
+    margin: 0px;
+    font-size: 0.9rem;
+}
