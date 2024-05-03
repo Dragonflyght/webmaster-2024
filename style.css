@@ -194,7 +194,7 @@ header {
     align-items: center;
     text-align: center;
     width: 100%;
-    height: 75vh;
+    height: 50vh;
     padding: 100px 10px;
     box-shadow: inset 0px 0px 15px rgba(0,0,0,0.2);
 }
@@ -255,7 +255,7 @@ header .header-content.header-content-white {
 }
 
 #initiatives-header {
-    background-image: url("assets/initiatives-adj.png");
+    background-image: url("assets/solar.png");
     background-position: 50% 50%;
 }
 
@@ -265,8 +265,22 @@ header .header-content.header-content-white {
 }
 
 #references-header {
-    background-image: url("assets/powerlines-extended.png");
+    background-image: url("assets/turbines-fog.png");
+    background-position: 50% 70%;
+}
+
+#references-header h1 {
+    color: var(--dkgreen);
+    text-shadow: 0px 0px 25px rgba(255,255,255,0.9);
+}
+
+#learn-header {
+    background-image: url("assets/reservoir-header.png");
     background-position: 50% 50%;
+}
+
+#learn-header h1 {
+    color: white;
 }
 
 #home-header-environment {
@@ -325,22 +339,27 @@ header .header-content.header-content-white {
 
 .sidebar {
     height: 100vh;
-    position: fixed;
     width: 250px;
-    padding-left: 25px;
     display: flex;
     flex-direction: column;
     justify-content: center;
+    float: left;
+    position: sticky;
+    top: 0px;
     
 }
 
 .sidebar ul {
     padding: 20px;
+    margin-left: 40px;
+    border-left: 2px solid black;
+    border-image: linear-gradient(transparent, black, transparent) 30;
 }
 
 .sidebar li {
     list-style: none;
     margin: 20px 0px 20px -15px;
+    margin-left: -36px;
 }
 
 .sidebar li a {
@@ -348,17 +367,34 @@ header .header-content.header-content-white {
     color: var(--black);
     font-size: 1.1rem;
     font-weight: 500;
+    transition: all 0.2s ease;
+}
+
+.sidebar li a:hover, .sidebar li a:focus, .sidebar li a:active {
+    color: var(--berry);
 }
 
 .sidebar li a.active-page-location {
-    color: var(--berry);
-    
+    color: var(--berry); 
 }
 
 .sidebar i {
-    width: 25px;
+    width: 30px;
+    height: 30px;
     text-align: center;
-    padding: 3px 0px;
+    background-color: var(--mdgray);
+    padding: 6px;
+    border-radius: 30px;
+    transition: background-color 0.4s ease;
+}
+
+.sidebar i.adjust-smaller {
+    font-size: 0.9rem;
+}
+
+.sidebar li a.active-page-location i {
+    color: var(--mdgray);
+    background-color: var(--berry); 
 }
 
 .sidebar span {
@@ -371,20 +407,21 @@ header .header-content.header-content-white {
 }
 
 .learn-section {
-    background-color: var(--mdgray);
-    padding: 60px 30px;
-    border-radius: 20px;
     width: 90%;
-    max-width: 800px;
-    margin: 0px auto 100px auto;
-    box-shadow: 0px 0px 15px rgba(0,0,0,0.2);
+    max-width: 1000px;
+    margin: 0px auto 50px auto;
     transition: all 0.35s ease-in-out;
+    padding-bottom: 50px;
+    border-bottom: 1px solid var(--sage);
+    opacity: 0.7;
+    scroll-margin-top: 35vh;
 }
 
-/* .learn-section.learn-section-focus {
+.learn-section.learn-section-focus {
     transform: scale(1.02);
+    opacity: 1;
 }
-*/
+
 .learn-section h1 {
     text-align: left;
     margin-bottom: 20px;
@@ -393,17 +430,11 @@ header .header-content.header-content-white {
 @media screen and (max-width: 992px) {
     .sidebar {
         width: 40px;
-        padding-left: 10px;
+        padding-left: 0px;
     }
     .sidebar-left {
-        margin-left: 40px;
+        margin-left: 50px;
         padding: 20px;
-    }
-    .learn-section {
-        background-color: white;
-        padding: 30px 20px;
-        border-radius: 10px;
-        margin: 0px auto 30px auto;
     }
 }
 
@@ -593,9 +624,47 @@ footer {
 
 footer .footer-brand {
     color: var(--sage);
+    font-size: 0.9rem;
 }
 
 footer p {
     margin: 0px;
-    font-size: 0.9rem;
+    font-size: 0.8rem;
+    display: inline;
+    padding: 0px 10px;
+}
+
+.content-grid {
+    display: flex;
+    flex-direction: row;
+    width: 100%;
+    justify-content: center;
+}
+
+.content-grid-column {
+    display: flex;
+    flex-direction: column;
+    
+}
+
+.content-grid-block {
+    background-color: white;
+    padding: 30px 20px;
+    margin: 20px;
+    max-width: 600px;
+    border-radius: 15px;
+    box-shadow: 0px 0px 15px rgba(0,0,0,0.1);
+}
+
+.content-grid-block h2 {
+    padding-bottom: 15px;
+    margin-bottom: 20px;
+    border-bottom: 1px solid var(--sage);
+}
+
+@media screen and (max-width: 992px) {
+    .content-grid {
+        flex-direction: column;
+        align-items: center;
+    }
 }
