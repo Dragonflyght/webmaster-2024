@@ -217,6 +217,7 @@ header.hero {
 }
 
 header.header-content-block {
+    height: auto;
     min-height: 100vh;
     
 }
@@ -240,6 +241,7 @@ header .header-content.header-content-white {
     border-radius: 15px;
     box-shadow: 0px 0px 15px rgba(0,0,0,0.2);
     padding: 80px;
+    margin-bottom: 100px;
 }
 
 
@@ -254,24 +256,24 @@ header .header-content.header-content-white {
     background-position: 50% 50%;
 }
 
-#initiatives-header {
-    background-image: url("assets/solar.png");
+#programs-header {
+    background-image: url("assets/drone-houses.jpg");
     background-position: 50% 50%;
 }
 
-#initiatives-header h1 {
+#programs-header h1 {
     color: white;
     text-shadow: 0px 0px 25px rgba(0,0,0,0.9);
 }
 
 #references-header {
-    background-image: url("assets/turbines-fog.png");
+    background-image: url("assets/wind-2.png");
     background-position: 50% 70%;
 }
 
 #references-header h1 {
-    color: var(--dkgreen);
-    text-shadow: 0px 0px 25px rgba(255,255,255,0.9);
+    color: white;
+    text-shadow: 0px 0px 25px rgba(0,0,0,0.9);
 }
 
 #learn-header {
@@ -281,10 +283,11 @@ header .header-content.header-content-white {
 
 #learn-header h1 {
     color: white;
+    text-shadow: 0px 0px 25px rgba(0,0,0,0.9);
 }
 
 #home-header-environment {
-    background-image: url("assets/power-plant.jpg");
+    background-image: url("assets/seedlings.jpg");
     background-position: 50% 50%;
 }
 
@@ -304,16 +307,17 @@ header .header-content.header-content-white {
     background-position: bottom 0px right 0px;
     background-repeat: no-repeat;
     color: white;
-    filter: drop-shadow(0px -5px 3px rgba(0,0,0,0.1));
+    filter: drop-shadow(0px -5px 3px rgba(0,0,0,0.05));
 }
 
 .svg-overlay.svg-overlay-windturbine {
     background-image: url("assets/windmills.svg")
 }
 
-.svg-overlay.svg-overlay-windturbine-green {
-    background-image: url("assets/windmills-green.svg")
+.svg-overlay.svg-overlay-solar {
+    background-image: url("assets/solar.svg")
 }
+
 
 .stat-block h1 {
     margin: 0px;
@@ -470,15 +474,22 @@ header .header-content.header-content-white {
 }
 
 .reveal {
-    background-color: white;
     position: relative;
     bottom: 0px;
+    opacity: 100%;
+    transition: all 0.5s ease-in;
+}
+
+.reveal.reveal-delay {
+    transition-delay: 0.3s;
+}
+
+.reveal.reveal-block {
+    background-color: white;
     border-radius: 15px;
     padding: 50px;
     text-align: center;
     margin: 20px;
-    opacity: 100%;
-    transition: all 0.5s ease-in;
     box-shadow: 0px 0px 15px rgba(0,0,0,0.1);
     flex: 1;
 }
@@ -528,6 +539,10 @@ table tr {
     background-color: rgba(255,255,255,0.5);
     padding: .35em;
     
+}
+
+table tr:hover {
+    background-color: var(--ltsage);
 }
 
 tr:nth-child(even) {
@@ -591,6 +606,10 @@ table a:hover, table a:active, table a:focus {
         margin: 50px 0px;
         border-radius: 15px;
         box-shadow: 0px 0px 15px rgba(0,0,0,0.1);
+    }
+
+    table tr:hover {
+        background-color: white;
     }
     
     table td {

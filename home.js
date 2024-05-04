@@ -1,7 +1,7 @@
 document.getElementById("body").onscroll = function scroll() {
   elements = {
     "home-header": [50, -30],
-    "home-header-environment": [50, -50]
+    "home-header-environment": [50, -80]
   }
   var scrolltotop = document.scrollingElement.scrollTop;
   for (element in elements) {
