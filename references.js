@@ -1,6 +1,6 @@
 document.getElementById("body").onscroll = function scroll() {
   elements = {
-    "references-header": [50, -40],
+    "references-header": [50, -100],
   }
   var scrolltotop = document.scrollingElement.scrollTop;
   for (element in elements) {

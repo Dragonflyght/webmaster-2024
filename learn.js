@@ -2,7 +2,8 @@ lastSection = "";
 
 document.getElementById("body").onscroll = function scroll() {
   elements = {
-    "learn-header": [50, -30]
+    "learn-header": [50, -30],
+    "section-solar": [50, -30]
   }
   var scrolltotop = document.scrollingElement.scrollTop;
   for (element in elements) {
@@ -16,7 +17,7 @@ document.getElementById("body").onscroll = function scroll() {
     target.style.backgroundPosition = xvalue + "% " + yvalue + "%";
   }
 
-  elements = ["about","solar","wind","geo", "hydro", "marine", "bio", "cost", "env"]
+  elements = ["about","solar","wind", "hydro", "geo", "marine", "bio", "cost", "env"]
   var scrolltotop = document.scrollingElement.scrollTop;
   var currentElement = elements[0];
   var switchPercent = 0.5;
@@ -51,6 +52,20 @@ document.getElementById("body").onscroll = function scroll() {
   lastSection = currentElement;
   // document.getElementById("learn-background-image").style.backgroundImage = "url('assets/learn-bg-images/"+currentElement+".jpg')";
   // console.log(document.getElementById('learn-background-image').style.backgroundImage);
+  
+  var reveal_elements = document.getElementsByClassName("reveal");
+  for (reveal_element in reveal_elements) {
+    reveal = reveal_elements[reveal_element];
+    if (typeof reveal == "object") {
+      if (reveal.classList.contains("reveal-hidden") && reveal.offsetTop < (scrolltotop + window.innerHeight)) {
+        reveal.classList.remove("reveal-hidden");
+      }
+      else if (!reveal.classList.contains("reveal-hidden") && reveal.offsetTop > (scrolltotop + window.innerHeight)) {
+        reveal.classList.add("reveal-hidden");
+      }
+    }
+    
+  }
 }
 
 function jumpTo() {
