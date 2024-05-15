@@ -1,9 +1,12 @@
 lastSection = "";
 
-document.getElementById("body").onscroll = function scroll() {
+document.getElementById("learn-body").onscroll = function scroll() {
   elements = {
     "learn-header": [50, -30],
-    "section-solar": [50, -30]
+    "section-solar": [50, -30],
+    "section-geo": [50, -30],
+    "section-bio": [50, -30],
+    "section-env": [50, -50]
   }
   var scrolltotop = document.scrollingElement.scrollTop;
   for (element in elements) {
@@ -17,7 +20,7 @@ document.getElementById("body").onscroll = function scroll() {
     target.style.backgroundPosition = xvalue + "% " + yvalue + "%";
   }
 
-  elements = ["about","solar","wind", "hydro", "geo", "marine", "bio", "cost", "env"]
+  elements = ["about","solar","wind", "geo", "hydro", "marine", "bio", "cost", "env"]
   var scrolltotop = document.scrollingElement.scrollTop;
   var currentElement = elements[0];
   var switchPercent = 0.5;
