@@ -15,7 +15,7 @@ document.getElementById("learn-body").onscroll = function scroll() {
     var yoffset = target.offsetTop;
     var factor = elements[element][1];
     console.log(xvalue, yoffset, factor);
-    var yvalue = ((((scrolltotop-yoffset) / window.innerHeight) * adjFactor) + 50);
+    var yvalue = ((((scrolltotop-yoffset) / window.innerHeight) * factor) + 50);
     console.log(yvalue);
     target.style.backgroundPosition = xvalue + "% " + yvalue + "%";
   }
