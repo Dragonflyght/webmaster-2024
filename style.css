@@ -2,6 +2,7 @@
     --offwhite: #f8fbfa;
     --ltgray: #ecf2ef;
     --mdgray: #e6ede9;
+    --dkmdgray: #d7e0db;
     --dkgray: #303432;
     --ltgreen: #578f74;
     --mdgreen: #206745;
@@ -11,7 +12,7 @@
     --ltlime: #dff4ba;
     --mdlime: #76ba00;
     --dklime: #4f7d00;
-    --ltberry: #9c5772;
+    --ltberry: #e09fb9;
     --berry: #7a0c38;
     --dkberry: #330215;
 }
@@ -307,9 +308,9 @@ header .header-content.header-content-white {
 
 
 .svg-overlay {
-    width: 100%;
+    width: 106%;
     height: 500px;
-    min-width: 800px;
+    min-width: 1000px;
     background-position-x: right;
     margin-top: -498px;
     background-size: contain;
@@ -317,9 +318,22 @@ header .header-content.header-content-white {
     background-repeat: no-repeat;
     color: white;
     filter: drop-shadow(0px -5px 3px rgba(0,0,0,0));
+    pointer-events: none;
 }
 
-.svg-overlay.svg-overlay-windturbine {
+.svg-overlay-right {
+    background-position-x: right;
+    float: right;
+    margin-right: -5%;
+}
+
+.svg-overlay-left {
+    background-position-x: left;
+    float: left;
+    margin-left: -5%;
+}
+
+.svg-overlay.svg-overlay-wind{
     background-image: url("assets/windmills.svg")
 }
 
@@ -327,14 +341,28 @@ header .header-content.header-content-white {
     background-image: url("assets/solar.svg")
 }
 
-.svg-overlay.svg-overlay-solar-small {
-    background-image: url("assets/solar-green-small.svg");
-
+.svg-overlay.svg-overlay-solar-green {
+    background-image: url("assets/solar-green.svg")
 }
 
-.svg-overlay.svg-overlay-wind-small {
-    background-image: url("assets/wind-small.svg");
-    
+.svg-overlay.svg-overlay-geo-green {
+    background-image: url("assets/geo-green.svg")
+}
+
+.svg-overlay.svg-overlay-hydro {
+    background-image: url("assets/hydro.svg")
+}
+
+.svg-overlay.svg-overlay-marine-green {
+    background-image: url("assets/marine-green.svg")
+}
+
+.svg-overlay.svg-overlay-plain-white {
+    background-image: url("assets/mountain-white.svg")
+}
+
+.svg-overlay.svg-overlay-plain-green {
+    background-image: url("assets/mountain-green.svg")
 }
 
 
@@ -345,13 +373,17 @@ header .header-content.header-content-white {
 
 @media screen and (max-width: 992px) {
     .learn-svg {
-        margin-top: -495px;
-        margin-bottom: -5px;
-        transform: scale(1);
+        width: 1100px;
     }
     .learn-section-odd .learn-svg {
-        background-position-x: right;
-        margin-left: -300px;
+        margin-right: -80px;
+        margin-top: -500px;
+        float: right;
+    }
+    .learn-section-even .learn-svg {
+        margin-left: -120px;
+        margin-top: -500px;
+        float: left;
     }
     .learn-section p {
         font-size: 1rem;
@@ -364,9 +396,7 @@ header .header-content.header-content-white {
     }
     .learn-section.learn-section-focus .learn-svg {
         filter: drop-shadow(0px -5px 3px rgba(0,0,0,0.01));
-        /* transform: scale(1.05);
-        margin-top: -500px;
-        margin-bottom: 25px; */
+        margin-top: -518px;
     }
 }
 
@@ -649,32 +679,37 @@ header .header-content.header-content-white {
 }
 
 table {
-    /* border: 1px solid var(--sage); */
-    border-collapse: collapse;
     margin: 50px;
+    border: none;
 }
 
 table tr {
     background-color: rgba(255,255,255,0.5);
     padding: .35em;
-    
+    transition: all 0.2s ease;
+    border: none;
 }
 
-table tr:hover {
-    background-color: var(--ltsage);
+table tr:hover, table tr:active, table tr:focus {
+    background-color: var(--dkmdgray);
+    transform: scale(1.015);
+    /* box-shadow: 0px 0px 15px rgba(0,0,0,0.1); */
 }
 
 tr:nth-child(even) {
     background-color: white;
 }
 
-table th,
-table td {
+table th, table td {
     padding: 20px;
 }
 
 table th {
     font-weight: 400;
+}
+
+.th-centered {
+    text-align: center;
 }
 
 table thead th {
@@ -684,7 +719,6 @@ table thead th {
 
 table thead {
     background-color: white;
-    
 }
 
 
@@ -693,6 +727,30 @@ table a {
     font-weight: 600;
     text-decoration: none;
 }
+
+table a.button-link {
+    color: var(--berry);
+    background-color: transparent;
+    border-color: transparent;
+    box-shadow: none;
+    width: 100%;
+    display: inline-block;
+    text-transform: none;
+    letter-spacing: normal;
+    text-align: center;
+}
+
+table tr:hover a.button-link, table tr:focus a.button-link, table tr:active a.button-link {
+    color: var(--mdgray);
+    background-color: var(--berry);
+}
+
+table a.button-link:hover, table a.button-link:active, table a.button-link:focus {
+    background-color: transparent!important;
+    color: var(--berry)!important;
+    border-color: var(--berry);
+}
+
 
 table a:hover, table a:active, table a:focus {
     color: var(--ltberry);
@@ -728,7 +786,7 @@ table a:hover, table a:active, table a:focus {
     }
 
     table tr:hover {
-        background-color: white;
+        transform: none;
     }
     
     table td {
@@ -757,7 +815,6 @@ footer {
     color: var(--ltberry);
     padding: 15px;
     text-align: center;
-    
 }
 
 footer .footer-brand {
