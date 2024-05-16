@@ -1,4 +1,4 @@
-document.getElementById("body").onscroll = function scroll() {
+document.getElementById("programs-body").onscroll = function scroll() {
   elements = {
     "programs-header": [50, -40],
   }

@@ -6,7 +6,7 @@ document.getElementById("learn-body").onscroll = function scroll() {
     "section-solar": [50, -30],
     "section-geo": [50, -30],
     "section-bio": [50, -30],
-    "section-env": [50, -20]
+    "section-env": [50, -50]
   }
   var scrolltotop = document.scrollingElement.scrollTop;
   for (element in elements) {
