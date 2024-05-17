@@ -118,7 +118,7 @@ p {
 }
 
 .navbar .navbar-toggler-icon {
-    background-image: url(assets/dot-menu.svg)!important;
+    background-image: url(assets/used/dot-menu.svg)!important;
 }
 
 .navbar-toggler,
@@ -265,142 +265,79 @@ header .header-content.header-content-white {
 }
 
 #home-header {
-    background-image: url("assets/powerlines-extended.png");
+    background-image: url("assets/used/powerlines-extended.png");
     /* background-image: url("assets/turbines-fog.png"); */
     background-position: 50% 50%;
 }
 
 #programs-header {
-    background-image: url("assets/drone-houses.jpg");
+    background-image: url("assets/used/solar-roof.jpg");
     background-position: 50% 50%;
+    background-color: rgba(14, 71, 44, 0.2);
+    background-blend-mode: darken;
 }
 
 #programs-header h1 {
     color: white;
-    text-shadow: 0px 0px 25px rgba(0,0,0,0.9);
+    text-shadow: 0px 0px 25px rgba(0,0,0,0.4);
 }
 
 #references-header {
-    background-image: url("assets/wind-2.png");
+    background-image: url("assets/used/solar-dusk.jpg");
     background-position: 50% 70%;
 }
 
 #references-header h1 {
     color: white;
-    text-shadow: 0px 0px 25px rgba(0,0,0,0.9);
+    text-shadow: 0px 0px 25px rgba(0,0,0,0.4);
+    
 }
 
 #learn-header {
-    background-image: url("assets/reservoir-header.png");
+    background-image: url("assets/used/reservoir-header.png");
     background-position: 50% 50%;
 }
 
 #learn-header h1 {
     color: white;
-    text-shadow: 0px 0px 25px rgba(0,0,0,0.9);
+    text-shadow: 0px 0px 25px rgba(0,0,0,0.4);
 }
 
 #home-header-environment {
-    background-image: url("assets/seedlings.jpg");
+    background-image: url("assets/used/seedlings.jpg");
     background-position: 50% 50%;
 }
 
 #home-energy-use-header {
-    background-image: url("assets/kitchen.png");
+    background-image: url("assets/used/kitchen.png");
     background-position: 50% 50%;
 }
 
 
-.svg-overlay {
-    width: 106%;
-    height: 500px;
-    min-width: 1000px;
-    background-position-x: right;
-    margin-top: -498px;
-    background-size: contain;
-    background-position-y: bottom;
-    background-repeat: no-repeat;
-    color: white;
-    filter: drop-shadow(0px -5px 3px rgba(0,0,0,0));
-    pointer-events: none;
-}
-
-.svg-overlay-right {
-    background-position-x: right;
-    float: right;
-    margin-right: -5%;
-}
-
-.svg-overlay-left {
-    background-position-x: left;
-    float: left;
-    margin-left: -5%;
-}
-
-.svg-overlay.svg-overlay-wind{
-    background-image: url("assets/windmills.svg")
-}
-
-.svg-overlay.svg-overlay-solar {
-    background-image: url("assets/solar.svg")
-}
-
-.svg-overlay.svg-overlay-solar-green {
-    background-image: url("assets/solar-green.svg")
-}
-
-.svg-overlay.svg-overlay-geo-green {
-    background-image: url("assets/geo-green.svg")
-}
-
-.svg-overlay.svg-overlay-hydro {
-    background-image: url("assets/hydro.svg")
-}
-
-.svg-overlay.svg-overlay-marine-green {
-    background-image: url("assets/marine-green.svg")
-}
-
-.svg-overlay.svg-overlay-plain-white {
-    background-image: url("assets/mountain-white.svg")
-}
-
-.svg-overlay.svg-overlay-plain-green {
-    background-image: url("assets/mountain-green.svg")
-}
-
-
-
-
-
-
-
 @media screen and (max-width: 992px) {
-    .learn-svg {
-        width: 1100px;
+    #home-header {
+        background-image: url("assets/used-small/powerlines-extended.jpg");
     }
-    .learn-section-odd .learn-svg {
-        margin-right: -80px;
-        margin-top: -500px;
-        float: right;
+    #programs-header {
+        background-image: url("assets/used-small/solar-roof.jpg");
     }
-    .learn-section-even .learn-svg {
-        margin-left: -120px;
-        margin-top: -500px;
-        float: left;
-    }
-    .learn-section p {
-        font-size: 1rem;
-    }
-    .learn-section p, .learn-section h1 {
-        margin-right: 20px;
+    #references-header {
+        background-image: url("assets/used-small/solar-dusk.jpg");
     }
     
-    .learn-section.learn-section-focus .learn-svg {
-        filter: drop-shadow(0px -5px 3px rgba(0,0,0,0.01));
-        margin-top: -518px;
+    #learn-header {
+        background-image: url("assets/used-small/reservoir-header.jpg");
+    }
+    
+    #home-header-environment {
+        background-image: url("assets/used-small/seedlings.jpg");
+    }
+    
+    #home-energy-use-header {
+        background-image: url("assets/used-small/kitchen.png");
     }
 }
+
 
 
 .stat-block h1 {
@@ -551,19 +488,19 @@ header .header-content.header-content-white {
     margin-top: 100px;
 }
 #section-solar {
-    background-image: url("assets/solar-house.png");
+    background-image: url("assets/used/solar-house.png");
 }
 
 #section-geo {
-    background-image: url("assets/geyser.jpg");
+    background-image: url("assets/used/geyser.jpg");
 }
 
 #section-bio {
-    background-image: url("assets/corn.jpg");
+    background-image: url("assets/used/corn.jpg");
 }
 
 #section-env {
-    background-image: url("assets/environment-extended.png");
+    background-image: url("assets/used/environment-extended.png");
 }
 
 @media screen and (max-width: 992px) {
@@ -607,6 +544,21 @@ header .header-content.header-content-white {
     }
     #learn-body {
         margin-bottom: 50px;
+    }
+    #section-solar {
+        background-image: url("assets/used-small/solar-house.jpg");
+    }
+    
+    #section-geo {
+        background-image: url("assets/used-small/geyser.jpg");
+    }
+    
+    #section-bio {
+        background-image: url("assets/used-small/corn.jpg");
+    }
+    
+    #section-env {
+        background-image: url("assets/used-small/environment-extended.jpg");
     }
     
 }
@@ -702,7 +654,7 @@ header .header-content.header-content-white {
     
 }
 
-#programs-body h1 {
+#programs-body h1:not(header h1) {
     max-width: 80%;
     margin: auto;
 }
