@@ -395,9 +395,7 @@ header .header-content.header-content-white {
     .learn-section p, .learn-section h1 {
         margin-right: 20px;
     }
-    .learn-section p.space-bottom {
-        margin-bottom: 100px;
-    }
+    
     .learn-section.learn-section-focus .learn-svg {
         filter: drop-shadow(0px -5px 3px rgba(0,0,0,0.01));
         margin-top: -518px;
@@ -522,6 +520,10 @@ header .header-content.header-content-white {
     padding: 40px 20px 40px 250px;
 }
 
+.learn-section p.space-bottom {
+    margin-bottom: 100px;
+}
+
 .learn-section.learn-section-bg {
     color: white;
 }
@@ -545,10 +547,9 @@ header .header-content.header-content-white {
     text-align: left;
     margin-bottom: 20px;
 }
-.learn-section-container p {
-    font-size: 1.2rem;
+.learn-section-container h1 {
+    margin-top: 100px;
 }
-
 #section-solar {
     background-image: url("assets/solar-house.png");
 }
@@ -567,7 +568,22 @@ header .header-content.header-content-white {
 
 @media screen and (max-width: 992px) {
     .learn-section {
-        padding-left: 50px;
+        padding: 0px 10px;
+    }
+    .learn-section p.reveal {
+        padding-left: 0px;
+        margin-bottom: 5px;
+        
+    }
+    .learn-section p {
+        padding-left: 0px;
+        padding-bottom: 0px;
+    }
+    .learn-section h1 {
+        margin-top: 50px;
+    }
+    .learn-section p.space-bottom {
+        margin-bottom: 50px;
     }
     .sidebar {
         width: 100%;
@@ -624,6 +640,7 @@ header .header-content.header-content-white {
 .reveal-container {
     display: flex;
     flex-direction: row;
+    margin: 0px 5%;
 }
 
 .reveal {
@@ -640,7 +657,7 @@ header .header-content.header-content-white {
 .reveal.reveal-block {
     background-color: white;
     border-radius: 15px;
-    padding: 50px;
+    padding: 2% 2% 5% 2%;
     text-align: center;
     margin: 20px;
     box-shadow: 0px 0px 15px rgba(0,0,0,0.1);
@@ -671,8 +688,11 @@ header .header-content.header-content-white {
 @media screen and (max-width: 992px) {
     .reveal-container {
         flex-direction: column;
+        margin: 0px 10px;
     }
-
+    .reveal.reveal-block {
+        padding: 15px 15px 40px 15px;
+    }
     .reveal {
         padding: 20px 20px 50px 20px;
     }
