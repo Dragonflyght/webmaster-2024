@@ -838,7 +838,7 @@ footer p {
 .content-grid-column {
     display: flex;
     flex-direction: column;
-    
+    max-width: 100%;
 }
 
 .content-grid-block {
@@ -871,8 +871,5 @@ footer p {
     .content-grid {
         flex-direction: column;
         align-items: center;
-    }
-    .content-grid-block {
-        max-width: 90%;
     }
 }
