@@ -854,6 +854,8 @@ footer p {
     color: var(--dkgreen);
     text-decoration: none;
     font-weight: 600;
+    overflow-wrap: break-word;
+    word-wrap: break-word;
 }
 
 .content-grid-block a:hover, .content-grid-block a:active, .content-grid-block a:focus {
